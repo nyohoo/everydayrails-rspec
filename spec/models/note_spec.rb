@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Note, type: :model do
+
   before do
     @user = User.create(
       first_name: "Joe",
@@ -13,11 +13,14 @@ RSpec.describe Note, type: :model do
     )
   end
 
+
   it "is valid with a user, project, and message" do
     note = Note.new(
       message: "This is a sample note.",
+
       user: @user,
       project: @project,
+
     )
     expect(note).to be_valid
   end
